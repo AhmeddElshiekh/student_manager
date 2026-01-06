@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "114297040367",
+    "project_id": "student-manager-4edaa",
+    "storage_bucket": "student-manager-4edaa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114297040367:android:71457af12f515b58dfda1a",
+        "android_client_info": {
+          "package_name": "com.badawi.studentmanager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUpxnKdiCcvZnGZGlYyFowbo8owiepfk0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

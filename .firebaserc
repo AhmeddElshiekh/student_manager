@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "chat": "chat-app-53bc6",
+    "student_manager": "student-manager-4edaa"
+  },
+  "targets": {},
+  "etags": {}
+}
