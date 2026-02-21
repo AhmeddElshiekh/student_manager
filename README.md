@@ -1,6 +1,6 @@
 # Nizam - نظام
 
-<a href='https://play.google.com/store/apps/details?id=com.badawi.smartStudent'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width=200/></a>
+<a href='https://play.google.com/store/apps/details?id=dev.buildkeyz.nizam'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width=200/></a>
 
 A powerful, offline-first student and class management system built with Flutter. Designed for tutors and educational centers, Nizam offers seamless data synchronization across multiple devices.
 
