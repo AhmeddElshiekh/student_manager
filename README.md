@@ -55,9 +55,9 @@ cd student_manager
 **2. Set up Firebase:**
 
 -   Create a new project on the [Firebase Console](https://console.firebase.google.com/).
--   Add an Android and/or iOS app to your Firebase project.
--   Follow the instructions to add the `google-services.json` (for Android) and `GoogleService-Info.plist` (for iOS) files to the project.
--   Enable **Authentication** (Email/Password) and **Firestore Database**.
+-   Install the FlutterFire CLI if you haven't already: `dart pub global activate flutterfire_cli`.
+-   From the root of the project, run the configure command: `flutterfire configure`. This will guide you through connecting the app to your Firebase project and will automatically generate the necessary `firebase_options.dart` file (which is not committed to this repository for security reasons).
+-   Enable **Authentication** (Email/Password) and **Firestore Database** in the Firebase console.
 
 **3. Install dependencies:**
 
