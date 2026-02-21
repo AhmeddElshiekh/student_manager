@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:studentmanager/features/user/view/widgets/filter_chips.dart';
-import 'package:studentmanager/features/user/view/widgets/user_card.dart';
-import 'package:studentmanager/features/user/view_model/admin_cubit.dart';
-import 'package:studentmanager/features/user/view_model/admin_state.dart';
+import 'package:nizam/features/user/view/widgets/filter_chips.dart';
+import 'package:nizam/features/user/view/widgets/user_card.dart';
+import 'package:nizam/features/user/view_model/admin_cubit.dart';
+import 'package:nizam/features/user/view_model/admin_state.dart';
 
 class AdminPage extends StatelessWidget {
   const AdminPage({super.key});

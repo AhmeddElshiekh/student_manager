@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:studentmanager/features/settings/view/widgets/settings_card.dart';
+import 'package:nizam/features/settings/view/widgets/settings_card.dart';
 import '../../view_model/settings_cubit.dart';
 
 class AddClassesSettings extends StatelessWidget {

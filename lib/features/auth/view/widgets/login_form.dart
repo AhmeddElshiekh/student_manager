@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:studentmanager/features/auth/view/widgets/password_field.dart';
-import 'package:studentmanager/features/auth/view/widgets/signup_navigation.dart';
+import 'package:nizam/features/auth/view/widgets/password_field.dart';
+import 'package:nizam/features/auth/view/widgets/signup_navigation.dart';
 import 'email_field.dart';
 import 'forgot_password_button.dart';
 import 'login_button.dart';

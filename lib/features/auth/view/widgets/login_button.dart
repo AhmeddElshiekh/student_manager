@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:studentmanager/features/auth/view_model/auth_cubit.dart';
-import 'package:studentmanager/features/auth/view_model/auth_state.dart';
+import 'package:nizam/features/auth/view_model/auth_cubit.dart';
+import 'package:nizam/features/auth/view_model/auth_state.dart';
 
 class LoginButton extends StatelessWidget {
   final VoidCallback? onPressed;

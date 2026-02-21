@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:studentmanager/features/auth/view_model/auth_cubit.dart';
-import 'package:studentmanager/features/auth/view_model/auth_state.dart';
-import 'package:studentmanager/main_navigation_view.dart';
+import 'package:nizam/features/auth/view_model/auth_cubit.dart';
+import 'package:nizam/features/auth/view_model/auth_state.dart';
+import 'package:nizam/main_navigation_view.dart';
 import 'login_view.dart';
 
 class AuthWrapper extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:studentmanager/features/user/view_model/admin_cubit.dart';
-import 'package:studentmanager/features/user/view_model/admin_state.dart';
+import 'package:nizam/features/user/view_model/admin_cubit.dart';
+import 'package:nizam/features/user/view_model/admin_state.dart';
 
 class ManageDevicesDialog extends StatefulWidget {
   const ManageDevicesDialog({super.key, required this.user, required this.cubit});

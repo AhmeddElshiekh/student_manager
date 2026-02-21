@@ -1,7 +1,7 @@
 
 import 'package:hive/hive.dart';
 import 'package:uuid/uuid.dart';
-import 'package:studentmanager/models/payment_record_model.dart';
+import 'package:nizam/models/payment_record_model.dart';
 part 'student_model.g.dart';
 
 @HiveType(typeId: 0)

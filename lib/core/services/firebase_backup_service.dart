@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:studentmanager/models/group_details_model.dart';
-import 'package:studentmanager/models/student_model.dart';
+import 'package:nizam/models/group_details_model.dart';
+import 'package:nizam/models/student_model.dart';
 
 class FirebaseBackupService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;

@@ -6,19 +6,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:studentmanager/features/auth/view/auth_wrapper.dart';
-import 'package:studentmanager/features/settings/view_model/settings_cubit.dart';
-import 'package:studentmanager/features/settings/view_model/settings_state.dart';
-import 'package:studentmanager/core/services/ClassGroupService.dart';
-import 'package:studentmanager/core/services/firebase_backup_service.dart';
-import 'package:studentmanager/core/theme/app_theme.dart';
-import 'package:studentmanager/firebase_options.dart';
-import 'package:studentmanager/models/group_details_model.dart';
-import 'package:studentmanager/models/payment_record_model.dart';
-import 'package:studentmanager/models/student_model.dart';
+import 'package:nizam/features/auth/view/auth_wrapper.dart';
+import 'package:nizam/features/settings/view_model/settings_cubit.dart';
+import 'package:nizam/features/settings/view_model/settings_state.dart';
+import 'package:nizam/core/services/ClassGroupService.dart';
+import 'package:nizam/core/services/firebase_backup_service.dart';
+import 'package:nizam/core/theme/app_theme.dart';
+import 'package:nizam/firebase_options.dart';
+import 'package:nizam/models/group_details_model.dart';
+import 'package:nizam/models/payment_record_model.dart';
+import 'package:nizam/models/student_model.dart';
 import 'package:workmanager/workmanager.dart';
 import 'features/auth/view_model/auth_cubit.dart';
-import 'package:studentmanager/core/services/auto_sync_service.dart';
+import 'package:nizam/core/services/auto_sync_service.dart';
 
 const simplePeriodicTask = "com.studentmanager.backupTask";
 
@@ -151,7 +151,7 @@ class SmartStudentAppWithBackup extends StatelessWidget {
               GlobalWidgetsLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
             ],
-            home: const AuthWrapper(), // The one true gatekeeper
+            home: const AuthWrapper(),
           ),
         );
       },

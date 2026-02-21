@@ -1,4 +1,4 @@
-import 'package:studentmanager/models/student_model.dart';
+import 'package:nizam/models/student_model.dart';
 
 // Enum for payment status filters
 enum PaymentStatusFilter {

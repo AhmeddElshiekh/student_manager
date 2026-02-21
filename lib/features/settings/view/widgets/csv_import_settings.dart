@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:studentmanager/core/navigation/app_router.dart';
-import 'package:studentmanager/features/settings/view/google_sheet.dart';
-import 'package:studentmanager/features/settings/view/widgets/conflict_resolution_dialog.dart';
-import 'package:studentmanager/features/settings/view/widgets/settings_card.dart';
+import 'package:nizam/core/navigation/app_router.dart';
+import 'package:nizam/features/settings/view/google_sheet.dart';
+import 'package:nizam/features/settings/view/widgets/conflict_resolution_dialog.dart';
+import 'package:nizam/features/settings/view/widgets/settings_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../view_model/settings_cubit.dart';
 import '../../view_model/settings_state.dart';

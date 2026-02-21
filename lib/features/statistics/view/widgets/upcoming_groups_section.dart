@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:studentmanager/models/group_details_model.dart';
+import 'package:nizam/models/group_details_model.dart';
 
 class UpcomingGroupsSection extends StatelessWidget {
   const UpcomingGroupsSection({

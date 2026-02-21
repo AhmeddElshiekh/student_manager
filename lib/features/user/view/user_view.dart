@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:studentmanager/features/user/view/widgets/action_buttons_list.dart';
-import 'package:studentmanager/features/user/view/widgets/profile_card.dart';
-import 'package:studentmanager/features/user/view_model/profile_cubit.dart';
-import 'package:studentmanager/features/user/view_model/profile_state.dart';
+import 'package:nizam/features/user/view/widgets/action_buttons_list.dart';
+import 'package:nizam/features/user/view/widgets/profile_card.dart';
+import 'package:nizam/features/user/view_model/profile_cubit.dart';
+import 'package:nizam/features/user/view_model/profile_state.dart';
 
 class UserProfileView extends StatelessWidget {
   const UserProfileView({super.key});

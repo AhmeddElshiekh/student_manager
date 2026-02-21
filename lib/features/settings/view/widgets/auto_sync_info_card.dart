@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:studentmanager/features/settings/view/widgets/settings_card.dart';
+import 'package:nizam/features/settings/view/widgets/settings_card.dart';
 
 class AutoSyncInfoCard extends StatelessWidget {
   const AutoSyncInfoCard({super.key});

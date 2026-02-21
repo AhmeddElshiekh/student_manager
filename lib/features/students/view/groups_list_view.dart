@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:studentmanager/features/students/view/students_view.dart';
-import 'package:studentmanager/models/student_model.dart';
-import 'package:studentmanager/features/students/view/add_student_view.dart';
-import 'package:studentmanager/core/services/ClassGroupService.dart';
+import 'package:nizam/features/students/view/students_view.dart';
+import 'package:nizam/models/student_model.dart';
+import 'package:nizam/features/students/view/add_student_view.dart';
+import 'package:nizam/core/services/ClassGroupService.dart';
 import 'package:collection/collection.dart';
 import '../../../core/navigation/app_router.dart';
 import 'widgets/edit_group_sheet.dart';

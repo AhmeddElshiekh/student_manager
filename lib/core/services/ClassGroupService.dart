@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
-import 'package:studentmanager/core/services/app_settings_service.dart';
-import 'package:studentmanager/models/group_details_model.dart';
+import 'package:nizam/core/services/app_settings_service.dart';
+import 'package:nizam/models/group_details_model.dart';
 
 class ClassGroupService {
   static late Box<String> classBox;

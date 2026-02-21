@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
-import 'package:studentmanager/models/student_model.dart';
+import 'package:nizam/models/student_model.dart';
 import 'class_groups_state.dart';
 
 class ClassGroupsCubit extends Cubit<ClassGroupsState> {

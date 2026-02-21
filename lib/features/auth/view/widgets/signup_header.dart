@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:studentmanager/core/theme/app_colors.dart';
+import 'package:nizam/core/theme/app_colors.dart';
 
 class SignUpHeader extends StatelessWidget {
   const SignUpHeader({super.key});

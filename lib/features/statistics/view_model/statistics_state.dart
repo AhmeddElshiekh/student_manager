@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:studentmanager/models/group_details_model.dart';
+import 'package:nizam/models/group_details_model.dart';
 
 enum StatisticsStatus { initial, loading, success, error }
 

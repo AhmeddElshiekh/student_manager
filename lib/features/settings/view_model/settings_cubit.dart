@@ -1,20 +1,20 @@
-
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
 import 'package:bloc/bloc.dart';
 import 'package:collection/collection.dart';
 import 'package:csv/csv.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:studentmanager/core/services/app_settings_service.dart';
-import 'package:studentmanager/core/services/auto_sync_service.dart';
-import 'package:studentmanager/core/services/firebase_backup_service.dart';
-import 'package:studentmanager/models/group_details_model.dart';
-import 'package:studentmanager/models/student_model.dart';
+import 'package:nizam/core/services/app_settings_service.dart';
+import 'package:nizam/core/services/auto_sync_service.dart';
+import 'package:nizam/core/services/firebase_backup_service.dart';
+import 'package:nizam/models/group_details_model.dart';
+import 'package:nizam/models/student_model.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:workmanager/workmanager.dart';
 import '../../../core/services/ClassGroupService.dart';
 import 'settings_state.dart';
@@ -31,7 +31,6 @@ class SettingsCubit extends Cubit<SettingsState> {
   static const String _autoBackupEnabledKey = 'auto_backup_enabled';
   static const String _autoBackupIntervalKey = 'auto_backup_interval_days';
 
-  // This will hold the raw CSV data while the user is resolving conflicts.
   List<List<dynamic>>? _pendingCsvFields;
 
   Future<void> _loadSettings() async {
@@ -119,7 +118,7 @@ class SettingsCubit extends Cubit<SettingsState> {
     await prefs.setBool(_autoBackupEnabledKey, enable);
     emit(state.copyWith(isAutoBackupEnabled: enable));
 
-    const taskName = "com.studentmanager.backupTask";
+    const taskName = "com.nizam.backupTask";
     if (enable) {
       Workmanager().registerPeriodicTask(
         taskName,
@@ -148,11 +147,6 @@ class SettingsCubit extends Cubit<SettingsState> {
   Future<void> exportDataToJson() async {
     emit(state.copyWith(status: SettingsStatus.loading));
     try {
-      if (!await _requestStoragePermission()) {
-        emit(state.copyWith(status: SettingsStatus.error, errorMessage: 'يجب منح إذن الوصول للملفات.'));
-        return;
-      }
-
       await _ensureHiveBoxesAreOpen();
 
       final studentsBox = Hive.box<StudentModel>('students');
@@ -166,18 +160,31 @@ class SettingsCubit extends Cubit<SettingsState> {
         'exportDate': DateTime.now().toIso8601String(),
       };
 
-      final dir = await _getDownloadDirectory();
-      if (dir == null) throw Exception('تعذر الوصول إلى مجلد الحفظ.');
-
       final timestamp = DateTime.now().toIso8601String().replaceAll(':', '-');
-      final file = File('${dir.path}/StudentManager_Backup_$timestamp.json');
-      await file.writeAsString(jsonEncode(exportData));
+      final fileName = 'Nizam_Backup_$timestamp.json';
 
-      _addBackupRecordToHistory();
-      emit(state.copyWith(
-        status: SettingsStatus.success,
-        successMessage: 'تم حفظ النسخة الاحتياطية في: ${file.path}',
-      ));
+      // Convert the data to bytes.
+      final String jsonString = jsonEncode(exportData);
+      final Uint8List bytes = utf8.encode(jsonString);
+
+      final String? result = await FilePicker.platform.saveFile(
+        dialogTitle: 'اختر مكان حفظ النسخة الاحتياطية',
+        fileName: fileName,
+        bytes: bytes,
+        type: FileType.custom,
+        allowedExtensions: ['json'],
+      );
+
+      if (result != null) {
+        await _addBackupRecordToHistory();
+        emit(state.copyWith(
+          status: SettingsStatus.success,
+          successMessage: 'تم حفظ النسخة الاحتياطية بنجاح!',
+        ));
+      } else {
+        // User canceled the picker
+        emit(state.copyWith(status: SettingsStatus.initial, errorMessage: 'تم إلغاء عملية الحفظ.'));
+      }
     } catch (e) {
       emit(state.copyWith(status: SettingsStatus.error, errorMessage: 'خطأ في تصدير البيانات: $e'));
     }
@@ -186,11 +193,6 @@ class SettingsCubit extends Cubit<SettingsState> {
   Future<void> importDataFromJson({required bool overwrite}) async {
     emit(state.copyWith(status: SettingsStatus.loading));
     try {
-      if (!await _requestStoragePermission()) {
-        emit(state.copyWith(status: SettingsStatus.error, errorMessage: 'يجب منح إذن الوصول للملفات.'));
-        return;
-      }
-
       final result = await FilePicker.platform.pickFiles(type: FileType.custom, allowedExtensions: ['json']);
       if (result == null || result.files.single.path == null) {
         emit(state.copyWith(status: SettingsStatus.initial, errorMessage: 'لم يتم اختيار ملف.'));
@@ -284,10 +286,7 @@ class SettingsCubit extends Cubit<SettingsState> {
     }
   }
 
-  /// Proceeds with the CSV import after user has resolved conflicts.
-  /// [studentNumbersToUpdate] is a list of student numbers the user has chosen to update.
-  /// If null, it means the user wants to update all conflicts found.
-  /// If it's an empty list, it means the user wants to skip all conflicts.
+
   Future<void> confirmCsvImport({List<String>? studentNumbersToUpdate}) async {
     if (_pendingCsvFields == null) {
       emit(state.copyWith(status: SettingsStatus.error, errorMessage: 'لا يوجد استيراد للمتابعة.'));
@@ -357,24 +356,6 @@ class SettingsCubit extends Cubit<SettingsState> {
     emit(state.copyWith(backupHistory: updatedHistory));
   }
 
-  Future<bool> _requestStoragePermission() async {
-    if (Platform.isAndroid) {
-      final status = await Permission.manageExternalStorage.request();
-      return status.isGranted;
-    }
-    return true;
-  }
-
-  Future<Directory?> _getDownloadDirectory() async {
-    if (Platform.isAndroid) {
-      final dir = Directory('/storage/emulated/0/StudentManager');
-      if (!await dir.exists()) {
-        await dir.create(recursive: true);
-      }
-      return dir;
-    }
-    return getApplicationDocumentsDirectory();
-  }
 
   Future<void> _ensureHiveBoxesAreOpen() async {
     if (!Hive.isBoxOpen('students')) await Hive.openBox<StudentModel>('students');
@@ -467,7 +448,7 @@ class SettingsCubit extends Cubit<SettingsState> {
 
       if (existingStudent != null) {
         existingStudent.name = name!;
-        existingStudent.parentNumber = parentNumber;
+        existingStudent.parentNumber = parentNumber!;
         existingStudent.studentClass = studentClass!;
         existingStudent.group = group!;
         existingStudent.originalGroup ??= group;

@@ -4,13 +4,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:studentmanager/features/auth/view_model/auth_cubit.dart';
-import 'package:studentmanager/features/payments/view/payments_view.dart';
-import 'package:studentmanager/features/settings/view/settings_view.dart';
-import 'package:studentmanager/features/statistics/view/statistics_view.dart';
-import 'package:studentmanager/features/students/view/classes_list_view.dart';
-import 'package:studentmanager/features/students/view/student_qr_view.dart';
-import 'package:studentmanager/features/user/view/user_view.dart';
+import 'package:nizam/features/auth/view_model/auth_cubit.dart';
+import 'package:nizam/features/payments/view/payments_view.dart';
+import 'package:nizam/features/settings/view/settings_view.dart';
+import 'package:nizam/features/statistics/view/statistics_view.dart';
+import 'package:nizam/features/students/view/classes_list_view.dart';
+import 'package:nizam/features/students/view/student_qr_view.dart';
+import 'package:nizam/features/user/view/user_view.dart';
 import 'core/navigation/app_router.dart';
 
 class MainNavigationView extends StatefulWidget {
@@ -63,7 +63,8 @@ class _MainNavigationViewState extends State<MainNavigationView> {
       },
       onError: (error) {
         if (mounted) {
-          _performSafeSignOut(message: 'حدث خطأ أثناء الاتصال، تم تسجيل خروجك.');
+          _performSafeSignOut(
+              message: 'حدث خطأ أثناء الاتصال، تم تسجيل خروجك.');
         }
       },
     );
@@ -80,8 +81,6 @@ class _MainNavigationViewState extends State<MainNavigationView> {
     _userSubscription?.cancel();
     super.dispose();
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -110,7 +109,11 @@ class _MainNavigationViewState extends State<MainNavigationView> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Student Manager'),
+          title: Image.asset(
+            'assets/images/removed_logo.png',
+            width: 80,
+            height: 100,
+          ),
           actions: [
             IconButton(
               icon: const Icon(Icons.qr_code_scanner),
@@ -124,7 +127,6 @@ class _MainNavigationViewState extends State<MainNavigationView> {
               },
               tooltip: 'مسح QR Code',
             ),
-
           ],
         ),
         body: screens[currentIndex],
@@ -134,7 +136,8 @@ class _MainNavigationViewState extends State<MainNavigationView> {
           type: BottomNavigationBarType.fixed,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.people), label: 'الطلاب'),
-            BottomNavigationBarItem(icon: Icon(Icons.payment), label: 'سجل الدفع'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.payment), label: 'سجل الدفع'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.bar_chart), label: 'الإحصائيات'),
             BottomNavigationBarItem(

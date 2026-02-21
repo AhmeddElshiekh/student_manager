@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:studentmanager/core/services/firebase_backup_service.dart';
-import 'package:studentmanager/models/group_details_model.dart';
-import 'package:studentmanager/models/student_model.dart';
+import 'package:nizam/core/services/firebase_backup_service.dart';
+import 'package:nizam/models/group_details_model.dart';
+import 'package:nizam/models/student_model.dart';
 
 
 class AutoSyncService {

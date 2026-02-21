@@ -9,7 +9,26 @@
       "client_info": {
         "mobilesdk_app_id": "1:114297040367:android:71457af12f515b58dfda1a",
         "android_client_info": {
-          "package_name": "com.badawi.studentmanager"
+          "package_name": "com.example.smart_student"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUpxnKdiCcvZnGZGlYyFowbo8owiepfk0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114297040367:android:d65aa7dc7ec26871dfda1a",
+        "android_client_info": {
+          "package_name": "dev.buildkeyz.nizam"
         }
       },
       "oauth_client": [],

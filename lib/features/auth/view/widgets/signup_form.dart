@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:studentmanager/features/auth/view/widgets/password_field_signup.dart';
-import 'package:studentmanager/features/auth/view/widgets/phone_field.dart';
-import 'package:studentmanager/features/auth/view/widgets/signup_button.dart';
-import 'package:studentmanager/features/auth/view/widgets/signup_header.dart';
+import 'package:nizam/features/auth/view/widgets/password_field_signup.dart';
+import 'package:nizam/features/auth/view/widgets/phone_field.dart';
+import 'package:nizam/features/auth/view/widgets/signup_button.dart';
+import 'package:nizam/features/auth/view/widgets/signup_header.dart';
 import '../../../../core/navigation/app_router.dart';
 import 'email_field.dart';
 import 'name_field.dart';

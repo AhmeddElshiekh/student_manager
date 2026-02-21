@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:studentmanager/features/user/view_model/admin_cubit.dart';
+import 'package:nizam/features/user/view_model/admin_cubit.dart';
 
 class FilterChips extends StatelessWidget {
   const FilterChips({super.key});

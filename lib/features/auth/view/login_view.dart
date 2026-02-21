@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:studentmanager/core/navigation/app_router.dart';
-import 'package:studentmanager/features/auth/view/signup_view.dart';
-import 'package:studentmanager/features/auth/view/widgets/login_form.dart';
-import 'package:studentmanager/features/auth/view/widgets/reset_password_dialog.dart';
-import 'package:studentmanager/features/auth/view_model/auth_cubit.dart';
-import 'package:studentmanager/features/auth/view_model/auth_state.dart';
+import 'package:nizam/core/navigation/app_router.dart';
+import 'package:nizam/features/auth/view/signup_view.dart';
+import 'package:nizam/features/auth/view/widgets/login_form.dart';
+import 'package:nizam/features/auth/view/widgets/reset_password_dialog.dart';
+import 'package:nizam/features/auth/view_model/auth_cubit.dart';
+import 'package:nizam/features/auth/view_model/auth_state.dart';
 
 class LoginView extends StatefulWidget {
   final String? initialMessage;

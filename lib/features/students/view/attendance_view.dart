@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:collection/collection.dart';
-import 'package:studentmanager/core/services/app_settings_service.dart';
-import 'package:studentmanager/models/student_model.dart';
+import 'package:nizam/core/services/app_settings_service.dart';
+import 'package:nizam/models/student_model.dart';
 import 'package:intl/intl.dart';
 
 class CreditStudentsPage extends StatelessWidget {

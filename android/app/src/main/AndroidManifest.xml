@@ -1,15 +1,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Permissions for reading and writing external storage (REQUIRED for export/import) -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <!-- Required for Android 11 (API 30) and above for broader storage access -->
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <!-- This permission is kept as it's used for the 'call parent' feature. -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <!--
+    The MANAGE_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE, and READ_EXTERNAL_STORAGE
+    permissions have been removed. We now use the Storage Access Framework (via file_picker)
+    which is the Google-recommended best practice and does not require these permissions.
+    This resolves the Google Play policy violation.
+    -->
 
     <queries>
         <intent>
@@ -30,11 +33,19 @@
             <data android:mimeType="text/plain"/>
         </intent>
     </queries>
+
     <application
-        android:label="Student Manager"
+        android:label="Nizam"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher"
-        android:requestLegacyExternalStorage="true"> <!-- Add this line for older Android versions compatibility -->
+        android:icon="@mipmap/ic_launcher">
+        
+        <!-- Fix for 16KB page size compatibility on newer devices. -->
+        <uses-native-library android:name="libflutter.so" android:required="false" />
+
+        <!--
+        The `requestLegacyExternalStorage` attribute has been removed as it is no longer needed
+        and is related to the deprecated storage access model.
+        -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -57,12 +68,5 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
-    <!-- The <queries> tag should ideally be outside the <application> tag,
-         but if it's duplicated, ensure the necessary permissions are in the main one. -->
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.PROCESS_TEXT"/>
-            <data android:mimeType="text/plain"/>
-        </intent>
-    </queries>
+
 </manifest>

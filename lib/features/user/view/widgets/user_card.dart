@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:studentmanager/features/user/view/widgets/manage_devices_dialog.dart';
-import 'package:studentmanager/features/user/view_model/admin_cubit.dart';
-import 'package:studentmanager/features/user/view_model/admin_state.dart';
+import 'package:nizam/features/user/view/widgets/manage_devices_dialog.dart';
+import 'package:nizam/features/user/view_model/admin_cubit.dart';
+import 'package:nizam/features/user/view_model/admin_state.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class UserCard extends StatelessWidget {

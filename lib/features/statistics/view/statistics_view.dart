@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
-import 'package:studentmanager/core/services/ClassGroupService.dart';
-import 'package:studentmanager/models/student_model.dart';
-import 'package:studentmanager/core/widgets/custom_loader.dart';
-import 'package:studentmanager/features/statistics/view_model/statistics_cubit.dart';
-import 'package:studentmanager/features/statistics/view_model/statistics_state.dart';
-import 'package:studentmanager/features/statistics/view/widgets/charts_section.dart';
-import 'package:studentmanager/features/statistics/view/widgets/detailed_lists_section.dart';
-import 'package:studentmanager/features/statistics/view/widgets/main_statistics_section.dart';
-import 'package:studentmanager/features/statistics/view/widgets/revenue_statistics_section.dart';
-import 'package:studentmanager/features/statistics/view/widgets/upcoming_groups_section.dart';
+import 'package:nizam/core/services/ClassGroupService.dart';
+import 'package:nizam/models/student_model.dart';
+import 'package:nizam/core/widgets/custom_loader.dart';
+import 'package:nizam/features/statistics/view_model/statistics_cubit.dart';
+import 'package:nizam/features/statistics/view_model/statistics_state.dart';
+import 'package:nizam/features/statistics/view/widgets/charts_section.dart';
+import 'package:nizam/features/statistics/view/widgets/detailed_lists_section.dart';
+import 'package:nizam/features/statistics/view/widgets/main_statistics_section.dart';
+import 'package:nizam/features/statistics/view/widgets/revenue_statistics_section.dart';
+import 'package:nizam/features/statistics/view/widgets/upcoming_groups_section.dart';
 
 class StatisticsView extends StatelessWidget {
   const StatisticsView({super.key});

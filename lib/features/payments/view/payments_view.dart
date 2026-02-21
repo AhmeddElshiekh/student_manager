@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:studentmanager/features/payments/view/class_groups_view.dart';
-import 'package:studentmanager/features/payments/view_model/payments_cubit.dart';
-import 'package:studentmanager/features/payments/view_model/payments_state.dart';
-import 'package:studentmanager/features/students/view/attendance_view.dart';
-import 'package:studentmanager/core/navigation/app_router.dart';
+import 'package:nizam/features/payments/view/class_groups_view.dart';
+import 'package:nizam/features/payments/view_model/payments_cubit.dart';
+import 'package:nizam/features/payments/view_model/payments_state.dart';
+import 'package:nizam/features/students/view/attendance_view.dart';
+import 'package:nizam/core/navigation/app_router.dart';
 
 class PaymentsView extends StatelessWidget {
   const PaymentsView({super.key});

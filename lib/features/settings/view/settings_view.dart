@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:studentmanager/features/settings/view/widgets/auto_sync_info_card.dart';
+import 'package:nizam/features/settings/view/widgets/auto_sync_info_card.dart';
 import '../view_model/settings_cubit.dart';
 import '../view_model/settings_state.dart';
 import 'widgets/add_classes_settings.dart';

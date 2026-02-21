@@ -3,9 +3,9 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
-import 'package:studentmanager/features/students/view/students_view.dart';
-import 'package:studentmanager/models/group_details_model.dart';
-import 'package:studentmanager/models/student_model.dart';
+import 'package:nizam/features/students/view/students_view.dart';
+import 'package:nizam/models/group_details_model.dart';
+import 'package:nizam/models/student_model.dart';
 import 'statistics_state.dart';
 import 'dart:developer' as developer;
 

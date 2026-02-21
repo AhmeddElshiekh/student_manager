@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:studentmanager/features/auth/view/widgets/signup_form.dart';
-import 'package:studentmanager/features/auth/view_model/auth_cubit.dart';
-import 'package:studentmanager/features/auth/view_model/auth_state.dart';
+import 'package:nizam/features/auth/view/widgets/signup_form.dart';
+import 'package:nizam/features/auth/view_model/auth_cubit.dart';
+import 'package:nizam/features/auth/view_model/auth_state.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});

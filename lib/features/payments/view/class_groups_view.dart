@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:studentmanager/features/payments/view/group_payments_details_view.dart';
-import 'package:studentmanager/features/payments/view_model/class_groups_cubit.dart';
-import 'package:studentmanager/features/payments/view_model/class_groups_state.dart';
+import 'package:nizam/features/payments/view/group_payments_details_view.dart';
+import 'package:nizam/features/payments/view_model/class_groups_cubit.dart';
+import 'package:nizam/features/payments/view_model/class_groups_state.dart';
 
 class ClassGroupsView extends StatelessWidget {
   final String className;

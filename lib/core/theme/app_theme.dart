@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:studentmanager/core/theme/app_colors.dart';
+import 'package:nizam/core/theme/app_colors.dart';
 
 class AppTheme {
   static ThemeData get lightTheme {

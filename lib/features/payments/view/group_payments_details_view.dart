@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:studentmanager/features/payments/view_model/group_payments_details_cubit.dart';
-import 'package:studentmanager/features/payments/view_model/group_payments_details_state.dart';
-import 'package:studentmanager/models/student_model.dart';
+import 'package:nizam/features/payments/view_model/group_payments_details_cubit.dart';
+import 'package:nizam/features/payments/view_model/group_payments_details_state.dart';
+import 'package:nizam/models/student_model.dart';
 import 'package:collection/collection.dart';
 
 class GroupPaymentsDetailsView extends StatelessWidget {

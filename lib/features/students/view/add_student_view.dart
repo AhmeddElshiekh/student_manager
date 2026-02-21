@@ -2,12 +2,12 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
-import 'package:studentmanager/core/services/app_settings_service.dart';
-import 'package:studentmanager/models/student_model.dart';
-import 'package:studentmanager/models/payment_record_model.dart';
+import 'package:nizam/core/services/app_settings_service.dart';
+import 'package:nizam/models/student_model.dart';
+import 'package:nizam/models/payment_record_model.dart';
 import 'package:uuid/uuid.dart';
-import 'package:studentmanager/core/services/ClassGroupService.dart';
-import 'package:studentmanager/models/group_details_model.dart';
+import 'package:nizam/core/services/ClassGroupService.dart';
+import 'package:nizam/models/group_details_model.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:collection/collection.dart';
 
